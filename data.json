@@ -1,0 +1,47 @@
+{
+    "intents": [
+      {"tag": "greeting ",
+       "patterns": ["Hi there :)", "Is anyone there?","Hey :) ","Hola", "Hello", "Good day", "Hey", "Ekse", "Hi" , "GM" ],
+       "responses": ["Hi stranger", "Yebo yes, how can I help", "GM, how can I help ?", "Hola, how can I help ?",  "You again,how can I help ?"],
+       "context": [""]
+      },
+      {"tag": "goodbye",
+       "patterns": ["Bye", "See you later", "Goodbye", "Ok bye", "Bye Bye","See you"],
+       "responses": ["See you!", "Have a nice day", "Sure Bye", "Later dude", "Peace out", "Sure dude", "Ciao"],
+       "context": [""]
+      },
+      {"tag": "thanks",
+       "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+       "responses": ["Happy to help!", "Any time!", "My pleasure", "You are welcome"],
+       "context": [""]
+      },
+      {"tag": "noanswer",
+       "patterns": [],
+       "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand", "I am still here dude"],
+       "context": [""]
+       },
+       
+        {"tag": "about",
+        "patterns": ["Who are you?", "What are you?", "Who you are?" ],
+        "responses": ["I.m chaaben, your bot assistant", "I'm chaaben, an Artificial Intelligent bot"],
+        "context": [""]
+        },
+        {"tag": "name",
+        "patterns": ["what is your name", "what should I call you", "whats your name?"],
+        "responses": ["You can call me chaaben.", "I'm chaaben!", "Just call me as chaaben"],
+        "context": [""]
+    },
+        {"tag": "options",
+         "patterns": ["What do you do", "How can you help", "What do you know", "What is your purpose", "How can you help"],
+         "responses": ["I can tell you about chaabane technology group", "I can give you interesting facts about chaabane technology group"],
+         "context": [""]
+        },
+       {"tag": " group_info",
+        "patterns": ["what is chaabane technology group", "What can you tell me about chaaben technology group", "chaaben technology group", "Tell me about chaaben technology group", "What about chaaben technology group", "What do you know about chaaben technology group", "Tell me more about chaaben technology group", "What can you tell me about chaabane technology group", "Tell me about chaabane technology group", "What about chaabane technology group", "What do you know about chaabane technology group", "Tell me more about chaabane technology group"],
+        "responses": ["Chaaben Technology Group is a Tunisian company specializing in the field of IT development, based on new technologies such as Machine Learning, Big Data and Business Intelligence."],
+        "context": [""]
+    }
+]}
+
+
+  
