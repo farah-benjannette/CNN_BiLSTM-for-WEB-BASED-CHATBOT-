@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ChaaBen, your Bot Assistant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+        <i class="fas fa-bug"></i>  ChaaBen, your Bot Assistant <i class="fas fa-bug"></i>
+      </div>
+    </header>
+
+    <main class="msger-chat">
+      <div class="msg left-msg">
+        <div class="msg-img" style="background-image: url(https://i.pinimg.com/originals/0c/67/5a/0c675a8e1061478d2b7b21b330093444.gif)"></div>
+
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">ChaaBen</div>
+            <div class="msg-info-time"></div>
+          </div>
+
+          <div class="msg-text">
+            Hi, welcome to ChaaBen, your Bot Assistant! Go ahead and send me a message. 😄
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+      <button type="submit" class="msger-send-btn">Send</button>
+    </form>
+  </section>
+  <!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://i.pinimg.com/originals/0c/67/5a/0c675a8e1061478d2b7b21b330093444.gif";
+    const PERSON_IMG =  "data:image/png;base64,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";
+    const BOT_NAME = "    ChaaBen";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+
+      });
+
+    }
+
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
